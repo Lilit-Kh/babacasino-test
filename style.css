@@ -1,0 +1,186 @@
+/* Сброс отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Фон всего сайта */
+body {
+    background-color: #111;
+    color: white;
+}
+
+/* ---------------- */
+/*     ШАПКА (header) */
+/* ---------------- */
+
+.header {
+    position: fixed; /* фиксируем шапку */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* чтобы шапка была над остальным контентом */
+    padding: 15px 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* Контейнер в шапке и на первом экране */
+.header .container,
+.full-screen .container,
+.container2 {
+    max-width: 1200px; /* Фиксированная максимальная ширина для desktop */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content {  /* Flex контейнер для лого и кнопки */
+    display: flex;
+    justify-content: space-between; /* размещаем лого и кнопку по краям */
+    align-items: center; /* выравниваем по вертикали */
+    width: 100%; /* чтобы занять всю ширину контейнера */
+}
+
+/* Логотип */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Кнопка в шапке (PLAY NOW) */
+.button {
+    background: linear-gradient(270deg, #008701 0%, #00ED01);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none; /* убираем подчеркивание */
+}
+
+/* Ховер-эффект кнопки */
+.button:hover {
+    background: linear-gradient(45deg, #04aa1a);
+    transform: scale(1.25);
+}
+
+/* --------------- */
+/*  ПЕРВЫЙ ЭКРАН  */
+/* --------------- */
+
+.full-screen {
+    /* Чтобы контент не прятался за фиксированной шапкой, даём верхний отступ */
+    padding-top: 80px; /* отступ под шапку */
+
+    /* Занимаем всю ширину/высоту экрана */
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    /* Флекс-центрирование, если нужно разместить контент по центру 
+        (но у нас теперь есть .content с центром, можно оставить так) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Фон */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/background-intro1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0; /* фон под контентом */
+}
+
+/* Контент поверх фона */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* все элементы по левому краю */
+    position: absolute;
+    z-index: 1; 
+    top: 250px;       /* Отступ от верхнего края экрана (под хедер) */
+    left: 200px;      /* Отступ слева от экрана */
+    max-width: 90%;
+}
+
+/* Заголовок */
+.h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 61px;
+    text-transform: uppercase;
+    color: #FDCC08;
+
+    width: 652px;       /* Ширина заголовка */
+    margin-bottom: 50px;  /* Расстояние между заголовком и кнопкой */
+    text-align: left;    /* Выравнивание текста по левому краю */
+    margin: 0;          /* Убираем лишние отступы, если они были */
+    padding: 0;          /* Убираем лишние отступы */
+}
+
+/* Кнопка внутри .content */
+.content .button {
+    text-align: left; /* текст внутри кнопки тоже по левому краю */
+    font-size: 18px; 
+    padding: 15px 50px;
+    /* остальной ваш градиент, цвета, ховер-эффект и т.д. */
+}
+
+/* -------------------- */
+/*     АДАПТИВНОСТЬ     */
+/* -------------------- */
+
+@media (max-width: 1024px) and (min-width: 769px) { /* для портретных планшетов */
+    .header .container,
+    .full-screen .container,
+    .container2 {
+        max-width: 600px; /* Ширина контейнера для портретных планшетов */
+    }
+    .content {
+        top: 200px;
+        left: 100px; /* уменьшаем отступ слева */
+    }
+    .h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    .content .button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) { /* для мобильных */
+    .header .container,
+    .full-screen .container,
+    .container2 {
+        max-width: 350px; /* Ширина контейнера для мобильных */
+    }
+    .content {
+        top: 150px;
+        left: 20px; /* уменьшаем отступ слева */
+    }
+    .h1 {
+        font-size: 32px;
+        line-height: 40px;
+        width: auto; /* убираем фикс. ширину */
+    }
+    .content .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .logo img {
+        height: 40px;
+    }
+}
