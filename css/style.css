@@ -1,0 +1,231 @@
+
+
+
+/* Basic styles - you can customize these */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #09002f; /* Light gray background */
+}
+.header {
+    
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 100;
+    background-color: #09002f;
+    position: relative;
+   
+    
+}
+.wrapper {
+   /* max-width: 960px; /* ЕСЛИ ЭТО УБРАТЬ ТО БУДЕТ ПРИМЕРНО ПО ШИРИНЕ*/
+    width: 960px; /* Фиксированная ширина */
+    margin: 0 auto;
+  
+    background-color: white;
+}
+
+
+.header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 20px;
+    
+ 
+  
+
+    
+    
+    }
+
+.banner{
+    position: relative;   
+    
+ 
+}
+
+
+
+.button-container {
+    margin: 0 40px; /* или другое значение */
+}
+
+
+.button, .cta-button {
+    display: inline-block;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(270deg, rgb(0, 135, 1) 0%, rgb(0, 237, 1));
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.5s;
+    box-shadow: inset 0px 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.button:hover, .cta-button:hover {
+    background: linear-gradient(45deg, #04aa1a);
+    transform: scale(1.25);
+}
+
+
+.logo {
+    height: 53px;
+    margin-right: 0px;
+    
+}
+
+
+
+img {
+    
+    max-width: 100%;
+
+    height: auto;
+}
+
+/*... ааапп. ..*/
+
+.game-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.game-card {
+    width: 200px; /* Adjust as needed */
+    margin: 10px;
+
+    overflow: hidden; /* Hide overflowing image */
+}
+
+.game-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.game-card {
+    width: 160px; /* или другое значение */
+    font-size: 0; 
+    border-radius: 30px;
+    overflow: hidden;
+}
+.game-card img {
+    width: 100%;
+}
+.game-card a {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    background: radial-gradient(circle,  #31008C 0%, #2B0080 48%, #18004F 79%, #09002F 100%);
+
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 0 0px 30px 30px;
+    text-transform: uppercase;
+}
+
+
+
+.welcome-offer-container { /* Создаем отдельный контейнер для текста */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+.welcome-offer-text {
+    font-family: 'Montserrat', sans-serif;
+    
+    font-size: 30px;
+    color:#290186;
+    text-align: center;
+    font-weight:bolder   ;
+    text-transform: uppercase;
+    max-width: 600px; /* или другое значение, которое вам подходит */
+    
+}
+
+
+
+/*...последняя секция ...*/
+
+.call-to-action-section {
+    padding: 100px 0; /* Отступ сверху и снизу 100px, по бокам 0 */
+    
+    text-align: center; /* Выравнивание текста по центру */
+  }
+
+.cta-content {
+    max-width: 960px; /* Максимальная ширина контейнера 960px */
+    margin: 0 auto; /* Автоматическое центрирование контейнера по горизонтали */
+    display: flex; /* Используем flexbox для расположения элементов */
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Выравнивание элементов по центру по вертикали */
+  }
+
+.cta-text-container {
+    margin-bottom: 20px; /* Отступ снизу 20px */
+  }
+
+
+
+.cta-text {
+    font-family: 'Montserrat', sans-serif; /* Шрифт Montserrat */
+    font-size: 30px; /* Размер шрифта 30px */
+    color: #290186; /* Цвет текста #290186 */
+    text-align: center; /* Выравнивание текста по центру */
+    font-weight: bolder; /* Жирное начертание шрифта */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+  }
+
+.cta-steps-container {
+    margin-bottom: 20px; /* Отступ снизу 20px */
+  }
+
+.cta-steps {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы внутри списка */
+  }
+  
+  .cta-steps li {
+    font-size: 20px; /* Размер шрифта 20px */
+    margin-bottom: 10px; /* Отступ снизу 10px */
+    font-weight: bolder; /* Жирное начертание шрифта */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+  }
+  .cta-button-container {
+    margin-bottom: 20px; /* Отступ снизу 20px */
+  }
+
+
+  
+
+
+
+footer {
+    text-align: center;
+    background: radial-gradient(circle, #31008C 0%, #2B0080 48%, #18004F 79%, #09002F 100%);
+    color: rgb(182, 183, 189);
+    padding: 50px;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 12px; 
+}
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .cta-content {
+        max-width: 90%; /* Изменяем ширину на мобильных устройствах */
+        padding: 0 20px;
+    }
+}
